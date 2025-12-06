@@ -1,15 +1,15 @@
-group 'com.bottlepay.flutter_libphonenumber'
+group 'com.couttsconsulting.flutter_libphonenumber'
 version '1.0-SNAPSHOT'
 
 buildscript {
-    ext.kotlin_version = '1.7.10'
+    ext.kotlin_version = '2.2.21'
     repositories {
         google()
         mavenCentral()
     }
 
     dependencies {
-        classpath 'com.android.tools.build:gradle:8.1.4'
+        classpath 'com.android.tools.build:gradle:8.13.1'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
     }
 }
@@ -26,7 +26,7 @@ apply plugin: 'kotlin-android'
 
 android {
     if (project.android.hasProperty("namespace")) {
-        namespace("com.bottlepay.flutter_libphonenumber")
+        namespace("com.couttsconsulting.flutter_libphonenumber")
     }
 
     compileOptions {
@@ -38,13 +38,13 @@ android {
         jvmTarget = '17'
     }
 
-    compileSdk 34
+    compileSdk flutter.compileSdkVersion
 
     sourceSets {
         main.java.srcDirs += 'src/main/kotlin'
     }
     defaultConfig {
-        minSdkVersion 18
+        minSdkVersion flutter.minSdkVersion
     }
     lintOptions {
         disable 'InvalidPackage'
@@ -53,5 +53,5 @@ android {
 
 dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
-    implementation "com.googlecode.libphonenumber:libphonenumber:8.13.43"
+    implementation "com.googlecode.libphonenumber:libphonenumber:9.0.20"
 }

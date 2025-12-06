@@ -1,5 +1,5 @@
 @JS()
-library libphonenumber;
+library;
 
 import 'dart:js_interop';
 

@@ -29,8 +29,7 @@ class LibPhonenumberTextFormatter extends TextInputFormatter {
 
     /// Allow additional digits on the mask
     if (additionalDigits > 0) {
-      m += List.filled(additionalDigits, '0')
-          .reduce((final a, final b) => a + b);
+      m += List.filled(additionalDigits, '0').reduce((final a, final b) => a + b);
     }
 
     _mask = PhoneMask(
@@ -53,7 +52,7 @@ class LibPhonenumberTextFormatter extends TextInputFormatter {
 
   /// Optional function to execute after we are finished formatting the number.
   /// Useful if you need to get the formatted value for something else to use.
-  final FutureOr Function(String val)? onFormatFinished;
+  final FutureOr<void> Function(String val)? onFormatFinished;
 
   /// Allow additional digits on the end of the mask. This is useful for countries like Austria where the
   /// libphonenumber example number doesn't include all of the possibilities. This way we can still format

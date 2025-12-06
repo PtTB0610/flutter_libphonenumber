@@ -12,7 +12,7 @@ import PhoneNumberKit
 
 
 public class SwiftFlutterLibphonenumberPlugin: NSObject, FlutterPlugin {
-    let dispQueue = DispatchQueue(label: "com.bottlepay.flutter_libphonenumber")
+    let dispQueue = DispatchQueue(label: "com.couttsconsulting.flutter_libphonenumber")
     
     
     public static func register(with registrar: FlutterPluginRegistrar) {
@@ -21,7 +21,7 @@ public class SwiftFlutterLibphonenumberPlugin: NSObject, FlutterPlugin {
         #else
           let messenger = registrar.messenger
         #endif
-        let channel = FlutterMethodChannel(name: "com.bottlepay/flutter_libphonenumber_darwin", binaryMessenger: messenger)
+        let channel = FlutterMethodChannel(name: "com.couttsconsulting/flutter_libphonenumber_darwin", binaryMessenger: messenger)
         let instance = SwiftFlutterLibphonenumberPlugin()
         registrar.addMethodCallDelegate(instance, channel: channel)
     }
@@ -36,7 +36,7 @@ public class SwiftFlutterLibphonenumberPlugin: NSObject, FlutterPlugin {
         }
     }
     
-    private let kit = PhoneNumberKit()
+    private let kit = PhoneNumberUtility()
     
     // Get all regions and assemble their phone mask data.
     private func getAllSupportedRegions(result: @escaping FlutterResult) {

@@ -3,8 +3,10 @@ description: Demonstrates how to use the flutter_libphonenumber plugin.
 publish_to: none
 
 environment:
-  sdk: ">=2.19.0 <4.0.0"
+  sdk: ^3.9.2
   flutter: ">=3.0.0"
+
+resolution: workspace
 
 dependencies:
   flutter:

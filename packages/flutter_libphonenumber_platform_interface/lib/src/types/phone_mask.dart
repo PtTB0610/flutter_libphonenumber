@@ -21,8 +21,7 @@ class PhoneMask {
     /// If phone mask doesn't contain country code but input does,
     /// remove the country code from the input
     if (!mask.startsWith('+') && inputString.startsWith('+')) {
-      cleanedInput =
-          cleanedInput.replaceFirst(RegExp('^${country.phoneCode}'), '');
+      cleanedInput = cleanedInput.replaceFirst(RegExp('^${country.phoneCode}'), '');
     }
 
     final chars = cleanedInput.split('');

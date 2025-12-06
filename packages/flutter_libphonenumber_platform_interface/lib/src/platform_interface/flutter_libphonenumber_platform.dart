@@ -12,8 +12,7 @@ abstract class FlutterLibphonenumberPlatform extends PlatformInterface {
 
   static final Object _token = Object();
 
-  static FlutterLibphonenumberPlatform _instance =
-      MethodChannelFlutterLibphonenumber();
+  static FlutterLibphonenumberPlatform _instance = MethodChannelFlutterLibphonenumber();
 
   /// The default instance of [FlutterLibphonenumberPlatform] to use.
   ///
@@ -122,8 +121,7 @@ abstract class FlutterLibphonenumberPlatform extends PlatformInterface {
     final bool removeCountryCodeFromResult = false,
     final bool inputContainsCountryCode = true,
   }) {
-    final guessedCountry =
-        country ?? CountryWithPhoneCode.getCountryDataByPhone(number);
+    final guessedCountry = country ?? CountryWithPhoneCode.getCountryDataByPhone(number);
 
     if (guessedCountry == null) {
       return number;
@@ -142,8 +140,7 @@ abstract class FlutterLibphonenumberPlatform extends PlatformInterface {
     /// Take a substring of the phone code length + 2 to account for leading `+` and space between
     /// country code and the number.
     if (removeCountryCodeFromResult && inputContainsCountryCode) {
-      formatResult =
-          formatResult.substring(guessedCountry.phoneCode.length + 2);
+      formatResult = formatResult.substring(guessedCountry.phoneCode.length + 2);
     }
 
     return formatResult;
@@ -168,9 +165,9 @@ abstract class FlutterLibphonenumberPlatform extends PlatformInterface {
 
       late final String formattedNumber;
       if (phoneNumberFormat == PhoneNumberFormat.international) {
-        formattedNumber = res['international'] ?? '';
+        formattedNumber = res['international'] as String? ?? '';
       } else if (phoneNumberFormat == PhoneNumberFormat.national) {
-        formattedNumber = res['national'] ?? '';
+        formattedNumber = res['national'] as String? ?? '';
       } else {
         /// Should never happen
         formattedNumber = '';
@@ -178,7 +175,7 @@ abstract class FlutterLibphonenumberPlatform extends PlatformInterface {
 
       /// Now construct the return value based on the requested format/type.
       return FormatPhoneResult(
-        e164: res['e164'] ?? '',
+        e164: res['e164'] as String? ?? '',
         formattedNumber: formattedNumber,
       );
     } catch (e) {

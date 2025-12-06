@@ -9,15 +9,15 @@ Pod::Spec.new do |s|
   s.description = <<-DESC
   Leverages libphonenumber to allow for asynchronous and synchronous formatting of phone numbers in Flutter apps. Includes a TextInputFormatter to allow real-time AsYouType formatting.
                        DESC
-  s.homepage = "https://github.com/bottlepay/flutter_libphonenumber"
+  s.homepage = "https://github.com/acoutts/flutter_libphonenumber"
   s.license = { :file => "../LICENSE" }
-  s.author = { "Andrew Coutts" => "andrew.coutts@bottlepay.com" }
+  s.author = { "Andrew Coutts" => "andrew@coutts-consulting.com" }
   s.source = { :path => "." }
   s.source_files = "Classes/**/*"
   s.ios.dependency 'Flutter'
   s.osx.dependency 'FlutterMacOS'
-  s.dependency "PhoneNumberKit/PhoneNumberKitCore", "3.8.0"
-  s.ios.deployment_target = '13.0'
+  s.dependency "PhoneNumberKit/PhoneNumberKitCore", "4.2.1"
+  s.ios.deployment_target = '12.0'
   s.osx.deployment_target = '10.15'
   # Flutter.framework does not contain a i386 slice. Only x86_64 simulators are supported.
   s.pod_target_xcconfig = { "DEFINES_MODULE" => "YES", "VALID_ARCHS[sdk=iphonesimulator*]" => "x86_64" }

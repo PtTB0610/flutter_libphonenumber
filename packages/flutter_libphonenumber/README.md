@@ -9,8 +9,8 @@ Uses the following native libraries:
 
 | Platform | Library        | Version |
 | -------- | -------------- | ------- |
-| Android  | libphonenumber | 8.13.43 |
-| iOS      | PhoneNumberKit | 3.8.0   |
+| Android  | libphonenumber | 9.0.20 |
+| iOS      | PhoneNumberKit | 4.2.1   |
 
 The main advantage to this lib is it lets you optionally format a phone number synchronously without making calls into libphonenumber with platform calls.
 

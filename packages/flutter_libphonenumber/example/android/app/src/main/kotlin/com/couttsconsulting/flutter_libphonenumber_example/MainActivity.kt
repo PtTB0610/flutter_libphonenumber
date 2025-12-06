@@ -1,4 +1,4 @@
-package com.example.flutter_libphonenumber_example
+package com.couttsconsulting.flutter_libphonenumber_example
 
 import io.flutter.embedding.android.FlutterActivity
 

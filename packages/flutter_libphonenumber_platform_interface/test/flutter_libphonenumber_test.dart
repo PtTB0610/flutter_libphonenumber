@@ -82,42 +82,44 @@ void main() {
     });
 
     test(
-        'with phoneNumberFormat=PhoneNumberFormat.national and phoneNumberType=PhoneNumberType.mobile',
-        () async {
-      final res = PhoneMask(
-        mask: const CountryWithPhoneCode.us().getPhoneMask(
-          format: PhoneNumberFormat.national,
-          type: PhoneNumberType.mobile,
-        ),
-        country: const CountryWithPhoneCode.us(),
-      );
-      final applied = res.apply('+14194444444');
+      'with phoneNumberFormat=PhoneNumberFormat.national and phoneNumberType=PhoneNumberType.mobile',
+      () async {
+        final res = PhoneMask(
+          mask: const CountryWithPhoneCode.us().getPhoneMask(
+            format: PhoneNumberFormat.national,
+            type: PhoneNumberType.mobile,
+          ),
+          country: const CountryWithPhoneCode.us(),
+        );
+        final applied = res.apply('+14194444444');
 
-      expect(
-        applied,
-        '(419) 444-4444',
-        reason: 'mask should not contain country code in it',
-      );
-    });
+        expect(
+          applied,
+          '(419) 444-4444',
+          reason: 'mask should not contain country code in it',
+        );
+      },
+    );
 
     test(
-        'with phoneNumberFormat=PhoneNumberFormat.international and phoneNumberType=PhoneNumberType.mobile',
-        () async {
-      final res = PhoneMask(
-        mask: const CountryWithPhoneCode.us().getPhoneMask(
-          format: PhoneNumberFormat.international,
-          type: PhoneNumberType.mobile,
-        ),
-        country: const CountryWithPhoneCode.us(),
-      );
-      final applied = res.apply('+14194444444');
+      'with phoneNumberFormat=PhoneNumberFormat.international and phoneNumberType=PhoneNumberType.mobile',
+      () async {
+        final res = PhoneMask(
+          mask: const CountryWithPhoneCode.us().getPhoneMask(
+            format: PhoneNumberFormat.international,
+            type: PhoneNumberType.mobile,
+          ),
+          country: const CountryWithPhoneCode.us(),
+        );
+        final applied = res.apply('+14194444444');
 
-      expect(
-        applied,
-        '+1 419-444-4444',
-        reason: 'mask should not contain country code in it',
-      );
-    });
+        expect(
+          applied,
+          '+1 419-444-4444',
+          reason: 'mask should not contain country code in it',
+        );
+      },
+    );
   });
 
   group('LibPhonenumberTextFormatter', () {
@@ -135,8 +137,7 @@ void main() {
       expect(
         formatResult.text,
         '+1 419-444-4444',
-        reason:
-            'formatting with a country code should apply the mask with the country code in it',
+        reason: 'formatting with a country code should apply the mask with the country code in it',
       );
     });
 
@@ -154,8 +155,7 @@ void main() {
       expect(
         formatResult.text,
         '419-444-4444',
-        reason:
-            'formatting with a country code should apply the mask with the country code in it',
+        reason: 'formatting with a country code should apply the mask with the country code in it',
       );
     });
   });

@@ -14,10 +14,10 @@ class MyApp extends StatefulWidget {
   const MyApp({super.key});
 
   @override
-  _MyAppState createState() => _MyAppState();
+  MyAppState createState() => MyAppState();
 }
 
-class _MyAppState extends State<MyApp> {
+class MyAppState extends State<MyApp> {
   final phoneController = TextEditingController();
   final countryController = TextEditingController(text: 'United States');
   final manualFormatController = TextEditingController();
@@ -52,15 +52,13 @@ class _MyAppState extends State<MyApp> {
 
     if (_globalPhoneType == PhoneNumberType.mobile) {
       if (_globalPhoneFormat == PhoneNumberFormat.international) {
-        newPlaceholder =
-            _currentSelectedCountry.exampleNumberMobileInternational;
+        newPlaceholder = _currentSelectedCountry.exampleNumberMobileInternational;
       } else {
         newPlaceholder = _currentSelectedCountry.exampleNumberMobileNational;
       }
     } else {
       if (_globalPhoneFormat == PhoneNumberFormat.international) {
-        newPlaceholder =
-            _currentSelectedCountry.exampleNumberFixedLineInternational;
+        newPlaceholder = _currentSelectedCountry.exampleNumberFixedLineInternational;
       } else {
         newPlaceholder = _currentSelectedCountry.exampleNumberFixedLineNational;
       }
@@ -68,8 +66,7 @@ class _MyAppState extends State<MyApp> {
 
     /// Strip country code from hint
     if (!_inputContainsCountryCode) {
-      newPlaceholder = newPlaceholder
-          .substring(_currentSelectedCountry.phoneCode.length + 2);
+      newPlaceholder = newPlaceholder.substring(_currentSelectedCountry.phoneCode.length + 2);
     }
 
     setState(() => _placeholderHint = newPlaceholder);
@@ -127,8 +124,7 @@ class _MyAppState extends State<MyApp> {
                                     onPressed: () async {
                                       // await FlutterLibphonenumber().init();
 
-                                      final res =
-                                          await getAllSupportedRegions();
+                                      final res = await getAllSupportedRegions();
                                       print(res['IT']);
                                       print(res['US']);
                                       print(res['BR']);
@@ -151,74 +147,64 @@ class _MyAppState extends State<MyApp> {
                                       },
                                       textAlign: TextAlign.center,
                                       onTap: () async {
-                                        final sortedCountries = CountryManager()
-                                            .countries
+                                        final sortedCountries = CountryManager().countries
                                           ..sort(
-                                            (final a, final b) =>
-                                                (a.countryName ?? '').compareTo(
+                                            (final a, final b) => (a.countryName ?? '').compareTo(
                                               b.countryName ?? '',
                                             ),
                                           );
-                                        final res = await showModalBottomSheet<
-                                            CountryWithPhoneCode>(
-                                          context: context,
-                                          isScrollControlled: false,
-                                          builder: (final context) {
-                                            return ListView.builder(
-                                              padding:
-                                                  const EdgeInsets.symmetric(
-                                                vertical: 16,
-                                              ),
-                                              itemBuilder:
-                                                  (final context, final index) {
-                                                final item =
-                                                    sortedCountries[index];
-                                                return GestureDetector(
-                                                  behavior:
-                                                      HitTestBehavior.opaque,
-                                                  onTap: () {
-                                                    Navigator.of(context)
-                                                        .pop(item);
-                                                  },
-                                                  child: Padding(
-                                                    padding: const EdgeInsets
-                                                        .symmetric(
-                                                      horizontal: 24,
-                                                      vertical: 16,
-                                                    ),
-                                                    child: Row(
-                                                      children: [
-                                                        /// Phone code
-                                                        Expanded(
-                                                          child: Text(
-                                                            '+${item.phoneCode}',
-                                                            textAlign:
-                                                                TextAlign.right,
-                                                          ),
-                                                        ),
-
-                                                        /// Spacer
-                                                        const SizedBox(
-                                                          width: 16,
-                                                        ),
-
-                                                        /// Name
-                                                        Expanded(
-                                                          flex: 8,
-                                                          child: Text(
-                                                            item.countryName ??
-                                                                '',
-                                                          ),
-                                                        ),
-                                                      ],
-                                                    ),
+                                        final res =
+                                            await showModalBottomSheet<CountryWithPhoneCode>(
+                                              context: context,
+                                              isScrollControlled: false,
+                                              builder: (final context) {
+                                                return ListView.builder(
+                                                  padding: const EdgeInsets.symmetric(
+                                                    vertical: 16,
                                                   ),
+                                                  itemBuilder: (final context, final index) {
+                                                    final item = sortedCountries[index];
+                                                    return GestureDetector(
+                                                      behavior: HitTestBehavior.opaque,
+                                                      onTap: () {
+                                                        Navigator.of(context).pop(item);
+                                                      },
+                                                      child: Padding(
+                                                        padding: const EdgeInsets.symmetric(
+                                                          horizontal: 24,
+                                                          vertical: 16,
+                                                        ),
+                                                        child: Row(
+                                                          children: [
+                                                            /// Phone code
+                                                            Expanded(
+                                                              child: Text(
+                                                                '+${item.phoneCode}',
+                                                                textAlign: TextAlign.right,
+                                                              ),
+                                                            ),
+
+                                                            /// Spacer
+                                                            const SizedBox(
+                                                              width: 16,
+                                                            ),
+
+                                                            /// Name
+                                                            Expanded(
+                                                              flex: 8,
+                                                              child: Text(
+                                                                item.countryName ?? '',
+                                                              ),
+                                                            ),
+                                                          ],
+                                                        ),
+                                                      ),
+                                                    );
+                                                  },
+                                                  itemCount: sortedCountries.length,
                                                 );
                                               },
-                                              itemCount: sortedCountries.length,
                                             );
-                                          },
-                                        );
 
                                         print('New country selection: $res');
 
@@ -230,8 +216,7 @@ class _MyAppState extends State<MyApp> {
                                           updatePlaceholderHint();
 
                                           countryController.text =
-                                              res.countryName ??
-                                                  '+ ${res.phoneCode}';
+                                              res.countryName ?? '+ ${res.phoneCode}';
                                         }
                                       },
                                       readOnly: true,
@@ -252,16 +237,14 @@ class _MyAppState extends State<MyApp> {
                                   Row(
                                     children: [
                                       Switch(
-                                        value: _globalPhoneType ==
-                                                PhoneNumberType.mobile
+                                        value: _globalPhoneType == PhoneNumberType.mobile
                                             ? true
                                             : false,
                                         onChanged: (final val) {
                                           setState(
-                                            () => _globalPhoneType =
-                                                val == false
-                                                    ? PhoneNumberType.fixedLine
-                                                    : PhoneNumberType.mobile,
+                                            () => _globalPhoneType = val == false
+                                                ? PhoneNumberType.fixedLine
+                                                : PhoneNumberType.mobile,
                                           );
                                           updatePlaceholderHint();
                                         },
@@ -271,8 +254,7 @@ class _MyAppState extends State<MyApp> {
                                       const SizedBox(width: 5),
 
                                       Flexible(
-                                        child: _globalPhoneType ==
-                                                PhoneNumberType.mobile
+                                        child: _globalPhoneType == PhoneNumberType.mobile
                                             ? const Text('Format as Mobile')
                                             : const Text('Format as FixedLine'),
                                       ),
@@ -283,16 +265,13 @@ class _MyAppState extends State<MyApp> {
                                   Row(
                                     children: [
                                       Switch(
-                                        value: _globalPhoneFormat ==
-                                                PhoneNumberFormat.national
+                                        value: _globalPhoneFormat == PhoneNumberFormat.national
                                             ? true
                                             : false,
                                         onChanged: (final val) {
                                           setState(
-                                            () => _globalPhoneFormat = val ==
-                                                    false
-                                                ? PhoneNumberFormat
-                                                    .international
+                                            () => _globalPhoneFormat = val == false
+                                                ? PhoneNumberFormat.international
                                                 : PhoneNumberFormat.national,
                                           );
                                           updatePlaceholderHint();
@@ -303,8 +282,7 @@ class _MyAppState extends State<MyApp> {
                                       const SizedBox(width: 5),
 
                                       Flexible(
-                                        child: _globalPhoneFormat ==
-                                                PhoneNumberFormat.national
+                                        child: _globalPhoneFormat == PhoneNumberFormat.national
                                             ? const Text('National')
                                             : const Text('International'),
                                       ),
@@ -390,10 +368,8 @@ class _MyAppState extends State<MyApp> {
                                 phoneNumberType: _globalPhoneType,
                                 phoneNumberFormat: _globalPhoneFormat,
                                 country: _currentSelectedCountry,
-                                inputContainsCountryCode:
-                                    _inputContainsCountryCode,
-                                shouldKeepCursorAtEndOfInput:
-                                    _shouldKeepCursorAtEndOfInput,
+                                inputContainsCountryCode: _inputContainsCountryCode,
+                                shouldKeepCursorAtEndOfInput: _shouldKeepCursorAtEndOfInput,
                               ),
                             ],
                           ),
@@ -452,8 +428,7 @@ class _MyAppState extends State<MyApp> {
                                     _currentSelectedCountry.countryCode,
                                   );
                                   setState(
-                                    () => manualFormatController.text =
-                                        res['formatted'] ?? '',
+                                    () => manualFormatController.text = res['formatted'] ?? '',
                                   );
                                 },
                               ),
@@ -475,14 +450,12 @@ class _MyAppState extends State<MyApp> {
                                     );
                                   }
                                   // Synchronous formatting with no native call into libphonenumber, just a dart call to mask the input
-                                  manualFormatController.text =
-                                      formatNumberSync(
+                                  manualFormatController.text = formatNumberSync(
                                     manualFormatController.text,
                                     country: _currentSelectedCountry,
                                     phoneNumberType: _globalPhoneType,
                                     phoneNumberFormat: _globalPhoneFormat,
-                                    inputContainsCountryCode:
-                                        _inputContainsCountryCode,
+                                    inputContainsCountryCode: _inputContainsCountryCode,
                                   );
                                 },
                               ),
@@ -502,12 +475,10 @@ class _MyAppState extends State<MyApp> {
                                   try {
                                     final res = await parse(
                                       manualFormatController.text,
-                                      region:
-                                          _currentSelectedCountry.countryCode,
+                                      region: _currentSelectedCountry.countryCode,
                                     );
 
-                                    const JsonEncoder encoder =
-                                        JsonEncoder.withIndent('  ');
+                                    const encoder = JsonEncoder.withIndent('  ');
 
                                     setState(
                                       () => parsedData = encoder.convert(res),

@@ -2,7 +2,18 @@ name: flutter_libphonenumber_workspace
 description: The workspace containing all of the flutter_libphonenumber packages.
 
 environment:
-  sdk: ">=2.19.5 <3.0.0"
+  sdk: ^3.9.2
+
+workspace:
+  - packages/flutter_libphonenumber
+  - packages/flutter_libphonenumber/example
+  - packages/flutter_libphonenumber_android
+  - packages/flutter_libphonenumber_android/example
+  - packages/flutter_libphonenumber_darwin
+  - packages/flutter_libphonenumber_darwin/example
+  - packages/flutter_libphonenumber_platform_interface
+  - packages/flutter_libphonenumber_web
+  - packages/flutter_libphonenumber_web/example
 
 dev_dependencies:
-  melos: ^3.0.0
+  flutter_lints: ^6.0.0

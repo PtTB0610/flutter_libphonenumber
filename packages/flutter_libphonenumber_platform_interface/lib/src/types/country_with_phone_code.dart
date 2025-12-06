@@ -19,31 +19,31 @@ class CountryWithPhoneCode {
 
   /// GB locale, useful for dummy values
   const CountryWithPhoneCode.gb()
-      : phoneCode = '44',
-        countryCode = 'GB',
-        exampleNumberMobileNational = '07400 123456',
-        exampleNumberFixedLineNational = '0121 234 5678',
-        phoneMaskMobileNational = '+00 00000 000000',
-        phoneMaskFixedLineNational = '+00 0000 000 0000',
-        exampleNumberMobileInternational = '+44 7400 123456',
-        exampleNumberFixedLineInternational = '+44 121 234 5678',
-        phoneMaskMobileInternational = '+00 0000 000000',
-        phoneMaskFixedLineInternational = '+00 000 000 0000',
-        countryName = 'United Kingdom';
+    : phoneCode = '44',
+      countryCode = 'GB',
+      exampleNumberMobileNational = '07400 123456',
+      exampleNumberFixedLineNational = '0121 234 5678',
+      phoneMaskMobileNational = '+00 00000 000000',
+      phoneMaskFixedLineNational = '+00 0000 000 0000',
+      exampleNumberMobileInternational = '+44 7400 123456',
+      exampleNumberFixedLineInternational = '+44 121 234 5678',
+      phoneMaskMobileInternational = '+00 0000 000000',
+      phoneMaskFixedLineInternational = '+00 000 000 0000',
+      countryName = 'United Kingdom';
 
   /// US locale, useful for dummy values
   const CountryWithPhoneCode.us()
-      : phoneCode = '1',
-        countryCode = 'US',
-        exampleNumberMobileNational = '(201) 555-0123',
-        exampleNumberFixedLineNational = '(201) 555-0123',
-        phoneMaskMobileNational = '(000) 000-0000',
-        phoneMaskFixedLineNational = '(000) 000-0000',
-        exampleNumberMobileInternational = '+1 201-555-0123',
-        exampleNumberFixedLineInternational = '+1 201-555-0123',
-        phoneMaskMobileInternational = '+0 000-000-0000',
-        phoneMaskFixedLineInternational = '+0 000-000-0000',
-        countryName = 'United States';
+    : phoneCode = '1',
+      countryCode = 'US',
+      exampleNumberMobileNational = '(201) 555-0123',
+      exampleNumberFixedLineNational = '(201) 555-0123',
+      phoneMaskMobileNational = '(000) 000-0000',
+      phoneMaskFixedLineNational = '(000) 000-0000',
+      exampleNumberMobileInternational = '+1 201-555-0123',
+      exampleNumberFixedLineInternational = '+1 201-555-0123',
+      phoneMaskMobileInternational = '+0 000-000-0000',
+      phoneMaskFixedLineInternational = '+0 000-000-0000',
+      countryName = 'United States';
 
   /// Country locale code.
   /// ```
@@ -199,8 +199,7 @@ class CountryWithPhoneCode {
     try {
       final countries = CountryManager().countries;
       final retCountry = countries.firstWhere((final data) {
-        final res =
-            _toNumericString(data.phoneCode) == _toNumericString(phoneCode);
+        final res = _toNumericString(data.phoneCode) == _toNumericString(phoneCode);
         return res;
       });
 

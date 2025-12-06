@@ -1,3 +1,7 @@
+## [2.0.0] - 2025.12.06
+
+- Bump gradle configs for latest flutter stable 3.38.4
+
 ## [1.4.1] - 2025.02.13
 
 - This fixes unresolved Registrar issue occurring after upgrading Flutter to 3.29.0 (#93 @amitkhairnar44)
@@ -19,10 +23,10 @@
 - Bump android compileSdk to 34
 - Fix android JVM version incompatibility build errors.
 
-## 1.0.1
+## [1.0.1] - 2023.05.01
 
 - Fix compatibility with AGP 8.0 (#43).
 
-## 1.0.0
+## [1.0.0] - 2023.03.24
 
 - Initial release after migration to federated plugin.

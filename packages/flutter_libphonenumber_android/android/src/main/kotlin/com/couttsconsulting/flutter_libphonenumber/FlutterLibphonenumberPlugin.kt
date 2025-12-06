@@ -1,4 +1,4 @@
-package com.bottlepay.flutter_libphonenumber
+package com.couttsconsulting.flutter_libphonenumber
 
 import android.os.Handler
 import android.os.Looper
@@ -24,7 +24,7 @@ public class FlutterLibphonenumberPlugin : FlutterPlugin, MethodCallHandler {
   private lateinit var channel: MethodChannel
 
   override fun onAttachedToEngine(@NonNull flutterPluginBinding: FlutterPlugin.FlutterPluginBinding) {
-    channel = MethodChannel(flutterPluginBinding.getFlutterEngine().getDartExecutor(), "com.bottlepay/flutter_libphonenumber_android")
+    channel = MethodChannel(flutterPluginBinding.getFlutterEngine().getDartExecutor(), "com.couttsconsulting/flutter_libphonenumber_android")
     channel.setMethodCallHandler(this);
   }
 

@@ -2,10 +2,11 @@
 
 This is the monorepo containing all of the related packages for `flutter_libphonenumber`.
 
-We use `melos` to manage the packages.
-
 ## Getting started
 ```bash
 $ flutter pub get
-$ flutter pub run melos bootstrap
 ```
+
+## Updating packags
+- Update packages individually and publish them each to pub. Make sure changelogs and pubspec.yaml files reflect latest version / changes.
+- Update flutter_libphonenumber to point to the updated package versions.
