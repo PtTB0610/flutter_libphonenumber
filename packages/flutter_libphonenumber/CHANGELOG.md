@@ -1,3 +1,7 @@
+## [2.6.0] - 2025.10.22
+
+- macOS Support.
+
 ## [2.5.1] - 2024.09.19
 
 - Bump flutter_libphonenumber_android to 1.4.1: This fixes unresolved Registrar issue occurring after upgrading Flutter to 3.29.0 (#93 @amitkhairnar44)
