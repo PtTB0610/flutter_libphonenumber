@@ -25,7 +25,7 @@ dependencies:
   flutter_libphonenumber_platform_interface:
     path: ../flutter_libphonenumber_platform_interface
   
-  web: ^1.1.1
+  web: ^0.5.0
 
 dev_dependencies:
   flutter_test:
