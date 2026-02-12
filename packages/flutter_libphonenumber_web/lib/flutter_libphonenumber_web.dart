@@ -9,7 +9,7 @@ import 'package:flutter_web_plugins/flutter_web_plugins.dart';
 import 'package:web/web.dart';
 
 /// The version of libphonenumber to use
-const String libPhoneNumberVersion = 'b7fe84af9b553f0f2db765a6e20c27fa867a971d';
+const String libPhoneNumberVersion = '90a74672cb7c9308224f3a4b0953ea9be13dbb68';
 const String libPhoneNumberUrl =
     'https://cdn.jsdelivr.net/gh/ruimarinho/google-libphonenumber@$libPhoneNumberVersion/dist/libphonenumber.min.js';
 

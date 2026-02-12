@@ -1,8 +1,8 @@
 name: flutter_libphonenumber_android
 description: Android implementation of the flutter_libphonenumber plugin.
-repository: https://github.com/acoutts/flutter_libphonenumber/tree/main/packages/flutter_libphonenumber_android
-issue_tracker: https://github.com/acoutts/flutter_libphonenumber/issues
-version: 2.0.0
+repository: https://github.com/sonahcmus/flutter_libphonenumber/tree/main/packages/flutter_libphonenumber_android
+issue_tracker: https://github.com/sonahcmus/flutter_libphonenumber/issues
+version: 2.0.1
 
 environment:
   sdk: ^3.9.2

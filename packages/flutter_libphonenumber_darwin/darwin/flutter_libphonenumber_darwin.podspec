@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   s.source_files = "Classes/**/*"
   s.ios.dependency 'Flutter'
   s.osx.dependency 'FlutterMacOS'
-  s.dependency "PhoneNumberKit/PhoneNumberKitCore", "4.2.1"
+  s.dependency "PhoneNumberKit/PhoneNumberKitCore", "4.2.4"
   s.ios.deployment_target = '12.0'
   s.osx.deployment_target = '10.15'
   # Flutter.framework does not contain a i386 slice. Only x86_64 simulators are supported.
