@@ -35,7 +35,7 @@ dependencies:
   flutter_libphonenumber_platform_interface:
     path: ../flutter_libphonenumber_platform_interface
   flutter_libphonenumber_web:
-    path: flutter_libphonenumber_web
+    path: ../flutter_libphonenumber_web
 
 dev_dependencies:
   flutter_test:
