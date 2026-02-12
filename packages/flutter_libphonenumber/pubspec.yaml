@@ -5,10 +5,9 @@ issue_tracker: https://github.com/sonahcmus/flutter_libphonenumber/issues
 version: 2.7.1
 
 environment:
-  sdk: ^3.9.2
+  sdk: ">=3.5.0 <4.0.0"
   flutter: ">=3.0.0"
 
-resolution: workspace
 
 flutter:
   plugin:
